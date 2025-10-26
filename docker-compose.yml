@@ -1,0 +1,14 @@
+services:
+  gaymers:
+    container_name: gaymers
+    build: .
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - "6007:8000"
+    volumes:
+      - gaymers:/app
+
+volumes:
+  gaymers:
