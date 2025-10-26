@@ -1,3 +1,6 @@
+
+{% load static %}
+
 <c-layouts.base>
 
     <div class="w-full h-full bg-transperent">
@@ -11,19 +14,33 @@
                 join 
                 join-vertical 
 
-                pt-2 
-                px-5
-                space-y-5
-
-                sm:space-y-10
-                sm:pl-10 
-                sm:pr-5
-                sm:pt-5
+                space-y-10
+                pl-5 
+                pr-5
+                pt-5
             "
         >
             <div class="sticky top-0 z-10">
                 <div class="join join-vertical gap-5 w-full">
-                    Topbar
+                    <div class="join w-full bg-base-300 rounded-xl p-5 gap-5 justify-center items-center">
+                        <div class="join gap-2 items-center">
+                            <img class="w-20 h-20" src="{% static 'logo/steam_white.png' %}" >
+                            <p class="text-4xl">GayMers</p>
+                        </div>
+
+                        <div class="h-full flex items-center">
+                            <div class="btn btn-ghost text-xl">New</div>
+                        </div>
+
+                        <div class="h-full flex items-center">
+                            <div class="btn btn-ghost text-xl">Popular</div>
+                        </div>
+
+                        <div class="h-full flex items-center">
+                            <div class="btn btn-ghost text-xl">Legends</div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 

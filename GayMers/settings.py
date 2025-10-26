@@ -156,7 +156,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
-    BASE_DIR / "theme" / "static",  # Tailwind и другие статики из theme
+    BASE_DIR / "theme" / "static",
+    BASE_DIR / "ui" / "static"
 ]
 
 # Default primary key field type

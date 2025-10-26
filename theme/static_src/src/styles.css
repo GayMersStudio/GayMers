@@ -1,5 +1,44 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "steam";
+  default: true;       /* эта тема будет по умолчанию */
+  prefersdark: true;   /* по умолчанию тёмная */
+  color-scheme: dark;  /* браузерный dark mode */
+
+  /* базовые цвета */
+  --color-base-100: #1b2838;  /* основной фон */
+  --color-base-200: #2a475e;
+  --color-base-300: #141619;
+  --color-base-content: #ffffff;
+
+  /* основные цвета */
+  --color-primary: #66c0f4;
+  --color-primary-content: #171a21;
+
+  --color-secondary: #2a475e;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #1b2838;
+  --color-accent-content: #66c0f4;
+
+  --color-neutral: #171a21;
+  --color-neutral-content: #acb2b8;
+
+  /* состояния */
+  --color-info: #75d0ff;
+  --color-info-content: #171a21;
+  --color-success: #4ade80;
+  --color-success-content: #171a21;
+  --color-warning: #fbbf24;
+  --color-warning-content: #171a21;
+  --color-error: #ef4444;
+  --color-error-content: #171a21;
+
+  /* эффекты */
+  --depth: 1;
+  --noise: 0;
+}
 
 /**
   * A catch-all path to Django template files, JavaScript, and Python files
