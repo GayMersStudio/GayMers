@@ -8,17 +8,20 @@
 # Dev
 
 ### Setup
-Create file .env and fill the data like in "example.env"
 
-Setup db
+#### .env
+
+    Create file .env in the root and fill the data like in "example.env"
+
+#### db
 
     python manage.py migrate
 
-Setup python
+#### python
 
     python -m pip install -r requirements.txt
 
-Setup tailwind
+#### tailwind
 
     python manage.py tailwind install
 
