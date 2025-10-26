@@ -9,8 +9,16 @@ class Django(BaseModel):
     secret_key: str
 
 
+class Database(BaseModel):
+    name: str
+    user: str
+    password: str
+    host: str
+
+
 class Settings(BaseSettings):
     django: Django
+    database: Database
 
     model_config = SettingsConfigDict(
         env_file=f".env",
