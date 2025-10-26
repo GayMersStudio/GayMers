@@ -10,6 +10,10 @@
 ### Setup
 Create file .env and fill the data like in "example.env"
 
+Setup db
+
+    python manage.py migrate
+
 Setup python
 
     python -m pip install -r requirements.txt

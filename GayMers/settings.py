@@ -47,7 +47,8 @@ INTERNAL_IPS = ["192.168.1.101"]
 
 # Application definition
 INTERNAL_APPS = [
-    "theme"
+    "theme",
+    "ui"
 ]
 
 EXTERNAL_APPS = [

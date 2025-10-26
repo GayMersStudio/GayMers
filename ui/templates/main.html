@@ -1,0 +1,52 @@
+<c-layouts.base>
+
+    <div class="w-full h-full bg-transperent">
+        <div 
+            class="
+                overflow-auto
+                hide-scrollbar 
+                
+                h-full 
+                w-full 
+                join 
+                join-vertical 
+
+                pt-2 
+                px-5
+                space-y-5
+
+                sm:space-y-10
+                sm:pl-10 
+                sm:pr-5
+                sm:pt-5
+            "
+        >
+            <div class="sticky top-0 z-10">
+                <div class="join join-vertical gap-5 w-full">
+                    Topbar
+                </div>
+            </div>
+
+            <div 
+                id="content" 
+                class="
+                    h-full 
+                    w-full 
+                    join 
+                    join-vertical 
+
+                    space-y-5
+                    sm:space-y-10
+                "
+            >
+                {% block content %}
+
+                    {% include "tabs/"|add:tab|add:".html" %}
+                
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+</c-layouts>
