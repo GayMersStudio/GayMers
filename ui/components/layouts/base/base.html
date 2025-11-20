@@ -1,20 +1,26 @@
 {% load static tailwind_tags %}
 
 <!DOCTYPE html>
-<html lang="en" data-theme="steam">
+<html lang="en" data-theme="dark">
 <head>
     <title>Django Tailwind</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-    
+
     {% tailwind_css %}
 </head>
 
 <body class="w-screen h-screen">
 
-    {{ slot }}
+    <div class="join join-vertical w-full h-full">
+        {% slot "header" %}{% endslot %}
+
+        {% slot "body" %}{% endslot %}
+
+        {% slot "footer" %}{% endslot %}
+    </div>
 
 </body>
 </html>

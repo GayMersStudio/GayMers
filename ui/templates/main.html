@@ -1,69 +1,38 @@
-
+{% load component_tags %}
 {% load static %}
 
-<c-layouts.base>
 
-    <div class="w-full h-full bg-transperent">
-        <div 
+{% component "base" text="qwe" %}
+
+    {% fill "header" %}
+        {% component "header" / %}
+    {% endfill %}
+
+    {% fill "body" %}
+
+        <div
+            id="content"
             class="
-                overflow-auto
-                hide-scrollbar 
-                
-                h-full 
-                w-full 
-                join 
-                join-vertical 
+                flex-1
+                join
+                join-vertical
 
-                space-y-10
-                pl-5 
-                pr-5
-                pt-5
+                space-y-5
+                sm:space-y-10
             "
         >
-            <div class="sticky top-0 z-10">
-                <div class="join join-vertical gap-5 w-full">
-                    <div class="join w-full bg-base-300 rounded-xl p-5 gap-5 justify-center items-center">
-                        <div class="join gap-2 items-center">
-                            <img class="w-20 h-20" src="{% static 'logo/steam_white.png' %}" >
-                            <p class="text-4xl">GayMers</p>
-                        </div>
+            {% block content %}
 
-                        <div class="h-full flex items-center">
-                            <div class="btn btn-ghost text-xl">New</div>
-                        </div>
+                {% include "tabs/"|add:tab|add:".html" %}
 
-                        <div class="h-full flex items-center">
-                            <div class="btn btn-ghost text-xl">Popular</div>
-                        </div>
+            {% endblock %}
 
-                        <div class="h-full flex items-center">
-                            <div class="btn btn-ghost text-xl">Legends</div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div 
-                id="content" 
-                class="
-                    h-full 
-                    w-full 
-                    join 
-                    join-vertical 
-
-                    space-y-5
-                    sm:space-y-10
-                "
-            >
-                {% block content %}
-
-                    {% include "tabs/"|add:tab|add:".html" %}
-                
-                {% endblock %}
-
-            </div>
         </div>
-    </div>
 
-</c-layouts>
+    {% endfill %}
+
+    {% fill "footer" %}
+        {% component "footer" / %}
+    {% endfill %}
+
+{% endcomponent %}

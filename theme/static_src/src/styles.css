@@ -1,10 +1,11 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+    themes: dim --default, light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, nord, sunset
+};
 @plugin "daisyui/theme" {
   name: "steam";
-  default: true;       /* эта тема будет по умолчанию */
-  prefersdark: true;   /* по умолчанию тёмная */
-  color-scheme: dark;  /* браузерный dark mode */
+  prefersdark: true;
+  color-scheme: dark;
 
   /* базовые цвета */
   --color-base-100: #1b2838;  /* основной фон */
@@ -40,11 +41,4 @@
   --noise: 0;
 }
 
-/**
-  * A catch-all path to Django template files, JavaScript, and Python files
-  * that contain Tailwind CSS classes and will be scanned by Tailwind to generate the final CSS file.
-  *
-  * If your final CSS file is not being updated after code changes, you may want to broaden or narrow
-  * the scope of this path.
-  */
 @source "../../../**/*.{html,py,js}";

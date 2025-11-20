@@ -1,2 +1,15 @@
 
-nothing
+<div class="join join-vertical gap-10">
+
+    {% for game in games %}
+        <div class="join gap-10 w-full min-h-50 bg-base-200 p-4">
+            <img
+                src="{{ game.pic }}"
+                class="h-50 w-50 rounded-md object-cover"
+            >
+
+        </div>
+
+    {% endfor %}
+    
+</div>

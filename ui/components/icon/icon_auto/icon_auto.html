@@ -1,0 +1,13 @@
+<svg
+    {% if id %}
+        id="{{ id }}"
+    {% endif %}
+
+    stroke="{{ stroke }}"
+    fill="{{ fill }}"
+
+    viewBox="0 0 24 24"
+    class="w-6 h-6 shrink-0 {{ class }}"
+>
+    {{ content|safe }}
+</svg>
