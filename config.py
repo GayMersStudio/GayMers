@@ -16,9 +16,14 @@ class Database(BaseModel):
     host: str
 
 
+class Steam(BaseModel):
+    key: str
+
+
 class Settings(BaseSettings):
     django: Django
     database: Database
+    steam: Steam
 
     model_config = SettingsConfigDict(
         env_file=f".env",
