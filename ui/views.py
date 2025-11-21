@@ -17,3 +17,12 @@ Every day, millions of players worldwide enter battle as one of over a hundred D
         return render(request, 'tabs/fresh.html', context)
 
     return render(request, "main.html", context)
+
+def welcome(request):
+    context = {
+        
+    }
+
+
+    return render(request, "welcome.html", context)
+

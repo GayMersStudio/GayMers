@@ -5,3 +5,4 @@ from .footer import Footer
 from .card import Card
 from .pcard import PCard
 from .game import Game
+from .sign_up import Sign_up
