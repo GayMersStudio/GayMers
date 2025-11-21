@@ -1,41 +1,55 @@
 {% load static %}
 
-<nav class=" bg-base-200 border-b border-gray-300">
-        <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
-            <div class="menu-left flex items-center space-x-6">
-                <img class="w-20 h-20" src="{% static 'logo/steam_white.png' %}" >
-                <a href="#" class="py-4 text-lg font-inter">GayMers</a>
-            </div>
-            <div class="menu-mid flex items-center space-x-6">
-                <ul class="flex items-center space-x-10">
-                    <li><a href="#" class="text-lg text-white-500 hover:text-gray-400">НОВИНКИ</a></li>
-                    <li><a href="#" class="text-lg text-white-500 hover:text-gray-400">ОНЛАЙН</a></li>
-                    <li><a href="#" class="text-lg text-white-500 hover:text-gray-400">ЛЕГЕНДАРНІ</a></li>
-                </ul>
-            </div>
-            <div class="menu-right flex items-center space-x-6">
-                <label class="input">
-                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <g
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        stroke-width="2.5"
-                        fill="none"
-                        stroke="currentColor"
-                      >
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.3-4.3"></path>
-                      </g>
-                    </svg>
-                    <input type="search" required placeholder="Search" />
-                  </label>
+<div class="flex w-full gap-10 px-4 py-4 h-25">
+    {% component "pcard" type="rounded" class="h-full" %}
+        {% fill "content" %}
+            <div class="flex w-full gap-10">
+                {% component "card" type="inv" class="h-full" %}
+                    {% fill "content" %}
+                        <div class="flex items-center gap-2 h-full">
+                            <img class="w-12 h-12" src="{% static 'logo/steam_white.png' %}" >
+                            <p class="text-xl font-bold text-base-content">GayMers</p>
+                        </div>
+                    {% endfill %}
+                {% endcomponent %}
 
-                  <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      </svg>
+                <div class="flex gap-5 items-center">
+                    {% component "tab" class="h-full" %}
+                        {% fill "content" %}
+                            <div class="flex items-center gap-2">
+                                <p class="text-lg text-currentColor">Fresh</p>
+                            </div>
+                        {% endfill %}
+                    {% endcomponent %}
 
-                  </a>
+                    {% component "tab" class="h-full" %}
+                        {% fill "content" %}
+                            <div class="flex items-center gap-2">
+                                <p class="text-lg text-currentColor">Trending</p>
+                            </div>
+                        {% endfill %}
+                    {% endcomponent %}
+
+                    {% component "tab" class="h-full" %}
+                        {% fill "content" %}
+                            <div class="flex items-center gap-2">
+                                <p class="text-lg text-currentColor">Classic</p>
+                            </div>
+                        {% endfill %}
+                    {% endcomponent %}
+                </div>
             </div>
-        </div>
-    </nav>
+        {% endfill %}
+    {% endcomponent %}
+
+    {% component "search" / %}
+
+    {% component "card" type="rounded" class="h-full" %}
+        {% fill "content" %}
+            <div class="flex items-center gap-3 h-full">
+                <img class="w-10 h-10" src="{% static 'logo/steam_white.png' %}" >
+                <p class="text-lg text-base-content">Sign in</p>
+            </div>
+        {% endfill %}
+    {% endcomponent %}
+</div>

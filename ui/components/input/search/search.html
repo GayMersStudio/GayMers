@@ -1,4 +1,37 @@
-<label class="flex gap-1 bg-base-300 h-full rounded-xl items-center p-4 {{ class }}">
+<label class="
+    flex flex-1
+    items-center
+
+    rounded-full
+
+    gap-4 py-2 px-6
+
+    bg-base-100/0
+    border-none
+    outline-none
+
+    backdrop-blur-sm
+    ring-0
+
+    text-base-content/60
+
+    focus-within:ring-0
+    focus-within:outline-none
+    focus-within:border-none
+    focus-within:shadow-sm
+    focus-within:text-base-content
+
+    hover:shadow-sm
+    hover:text-base-content
+
+    shadow-xl
+    transition-shadow
+    duration-200
+
+    w-full"
+>
+    {% component "icon_auto" icon="search" stroke="currentColor" / %}
+
     <input
         type="search"
         placeholder="Search"
@@ -8,6 +41,7 @@
             outline-none
             border-none
             ring-0
+
             focus:outline-none
             focus:border-none
             focus:ring-0

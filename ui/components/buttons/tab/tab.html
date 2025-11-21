@@ -1,0 +1,14 @@
+<button
+    class="
+        tab
+        btn btn-ghost
+        flex flex-col
+        items-start
+        border-none bg-base-100/0
+        shadow-none relative
+        text-base-content/60"
+    onclick="activateTab(this)"
+>
+    {% slot "content" %}{% endslot %}
+    <span class="h-0.5 bg-base-content w-full hidden mt-1"></span>
+</button>

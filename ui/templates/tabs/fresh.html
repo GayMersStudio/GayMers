@@ -1,0 +1,11 @@
+
+<div class="flex flex-col w-full h-full gap-20 items-center">
+    <div></div>
+
+    {% for game in games %}
+        {% component "game" title=game.title pic=game.pic desc=game.desc / %}
+
+    {% endfor %}
+
+    <div></div>
+</div>

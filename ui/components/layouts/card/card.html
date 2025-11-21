@@ -1,0 +1,51 @@
+
+<button
+    class="
+        btn
+        btn-ghost
+
+        flex
+        justify-start
+        items-center
+
+        {% if type == 'base' %}
+            py-2
+            px-4
+
+            border-none
+            rounded-xl
+            bg-base-100/0
+
+            backdrop-blur-sm
+            shadow-xl
+
+            hover:shadow-sm
+            hover:text-base-content
+
+       {% elif type == 'rounded' %}
+            py-2 px-6
+
+            border-none
+            rounded-full
+            bg-base-100/0
+
+            backdrop-blur-sm
+            shadow-xl
+
+            hover:shadow-sm
+            hover:text-base-content
+
+        {% elif type == 'inv' %}
+            p-0
+
+            border-none
+            bg-base-100/0
+            shadow-none
+
+        {% endif %}
+
+        {{ class }}
+    "
+>
+    {% slot "content" %}{% endslot %}
+</button>

@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from config import get_config
-from django_components import ComponentsSettings
 
 
 config = get_config()
@@ -90,7 +89,10 @@ ROOT_URLCONF = 'GayMers.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["ui"],
+        'DIRS': [
+            BASE_DIR / "ui" / "templates",
+            BASE_DIR / "ui" / "components",
+        ],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -118,6 +120,7 @@ COMPONENTS = {
     "dirs": [
         BASE_DIR / "ui" / "components"
     ],
+    "reload_on_file_change": True
 }
 
 

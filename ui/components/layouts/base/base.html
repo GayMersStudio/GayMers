@@ -1,7 +1,7 @@
 {% load static tailwind_tags %}
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="steam">
 <head>
     <title>Django Tailwind</title>
     <meta charset="UTF-8">
@@ -12,14 +12,99 @@
     {% tailwind_css %}
 </head>
 
+<style>
+    .liquid-bg {
+        position: fixed;
+        inset: 0;
+        filter: blur(200px);
+        overflow: hidden;
+    }
+
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+        transform-origin: center;
+        mix-blend-mode: screen;
+    }
+
+    @keyframes blob1 {
+        0% { transform: translate3d(0,0,0) scale(1); }
+        25% { transform: translate3d(20vw,-12vh,0) scale(1.15); }
+        50% { transform: translate3d(-15vw,10vh,0) scale(0.95); }
+        75% { transform: translate3d(10vw,-8vh,0) scale(1.05); }
+        100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    @keyframes blob2 {
+        0% { transform: translate3d(0,0,0) scale(1); }
+        20% { transform: translate3d(-18vw,8vh,0) scale(1.1); }
+        40% { transform: translate3d(12vw,-12vh,0) scale(0.95); }
+        60% { transform: translate3d(-10vw,15vh,0) scale(1.05); }
+        80% { transform: translate3d(15vw,-6vh,0) scale(1.1); }
+        100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    @keyframes blob3 {
+        0% { transform: translate3d(0,0,0) scale(1); }
+        25% { transform: translate3d(15vw,-15vh,0) scale(1.1); }
+        50% { transform: translate3d(-12vw,12vh,0) scale(0.95); }
+        75% { transform: translate3d(10vw,-10vh,0) scale(1.05); }
+        100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    @keyframes blob4 {
+        0% { transform: translate3d(0,0,0) scale(1); }
+        20% { transform: translate3d(12vw,-10vh,0) scale(1.05); }
+        40% { transform: translate3d(-10vw,15vh,0) scale(1.1); }
+        60% { transform: translate3d(15vw,-5vh,0) scale(0.95); }
+        80% { transform: translate3d(-8vw,12vh,0) scale(1.05); }
+        100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+    @keyframes blob5 {
+        0% { transform: translate3d(0,0,0) scale(1); }
+        20% { transform: translate3d(-15vw,12vh,0) scale(1.1); }
+        40% { transform: translate3d(10vw,-15vh,0) scale(0.95); }
+        60% { transform: translate3d(-12vw,10vh,0) scale(1.05); }
+        80% { transform: translate3d(8vw,-12vh,0) scale(1.1); }
+        100% { transform: translate3d(0,0,0) scale(1); }
+    }
+
+</style>
+
 <body class="w-screen h-screen">
+    <div class="liquid-bg fixed inset-0 -z-10 overflow-hidden">
+        <div class="blob bg-primary" style="width:65vw; height:65vw; top:0%; left:5%; animation: blob1 38s ease-in-out infinite;"></div>
+        <div class="blob bg-secondary" style="width:60vw; height:60vw; top:35%; left:55%; animation: blob2 32s ease-in-out infinite;"></div>
+        <div class="blob bg-accent" style="width:70vw; height:70vw; top:20%; left:25%; animation: blob3 40s ease-in-out infinite;"></div>
+        <div class="blob bg-primary" style="width:55vw; height:55vw; top:60%; left:15%; animation: blob4 36s ease-in-out infinite;"></div>
+        <div class="blob bg-secondary" style="width:50vw; height:50vw; top:10%; left:70%; animation: blob5 34s ease-in-out infinite;"></div>
+    </div>
 
-    <div class="join join-vertical w-full h-full">
-        {% slot "header" %}{% endslot %}
 
-        {% slot "body" %}{% endslot %}
 
-        {% slot "footer" %}{% endslot %}
+    <div class="
+        w-full h-full
+        flex flex-col
+
+        overflow-auto
+        hide-scrollbar
+    ">
+        <div class="sticky top-0 z-10">
+            <div class="flex flex-col gap-5 w-full">
+
+                {% slot "header" %}{% endslot %}
+            </div>
+        </div>
+
+        <div id="content" class="w-full h-full flex flex-col z-0">
+
+            {% slot "body" %}{% endslot %}
+
+        </div>
+
+        <!-- {% slot "footer" %}{% endslot %} -->
     </div>
 
 </body>

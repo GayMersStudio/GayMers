@@ -20,7 +20,6 @@ class IconAuto(component.Component):
         icon_key = icon if icon in ICONS else "none"
 
         return {
-            "id": kwargs.get("id"),
             "fill": kwargs.get("fill", "none"),
             "stroke": kwargs.get("stroke", "none"),
             "class": kwargs.get("class", "none"),

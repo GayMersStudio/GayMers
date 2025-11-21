@@ -7,13 +7,11 @@
   prefersdark: true;
   color-scheme: dark;
 
-  /* базовые цвета */
-  --color-base-100: #1b2838;  /* основной фон */
+  --color-base-100: #1b2838;
   --color-base-200: #2a475e;
   --color-base-300: #141619;
   --color-base-content: #ffffff;
 
-  /* основные цвета */
   --color-primary: #66c0f4;
   --color-primary-content: #171a21;
 
@@ -26,7 +24,6 @@
   --color-neutral: #171a21;
   --color-neutral-content: #acb2b8;
 
-  /* состояния */
   --color-info: #75d0ff;
   --color-info-content: #171a21;
   --color-success: #4ade80;
@@ -36,7 +33,6 @@
   --color-error: #ef4444;
   --color-error-content: #171a21;
 
-  /* эффекты */
   --depth: 1;
   --noise: 0;
 }

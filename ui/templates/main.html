@@ -10,24 +10,11 @@
 
     {% fill "body" %}
 
-        <div
-            id="content"
-            class="
-                flex-1
-                join
-                join-vertical
+        {% block content %}
 
-                space-y-5
-                sm:space-y-10
-            "
-        >
-            {% block content %}
+            {% include "tabs/"|add:tab|add:".html" %}
 
-                {% include "tabs/"|add:tab|add:".html" %}
-
-            {% endblock %}
-
-        </div>
+        {% endblock %}
 
     {% endfill %}
 
@@ -36,3 +23,15 @@
     {% endfill %}
 
 {% endcomponent %}
+
+<script>
+
+    function activteCurrentTab(name){
+        if (name === "Fresh"){
+            activateTab(document.querySelectorAll(".tab")[0])
+        }
+    }
+
+    activteCurrentTab("{{ tab }}")
+
+</script>
