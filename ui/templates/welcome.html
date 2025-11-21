@@ -1,1 +1,21 @@
-qwe
+{% load component_tags %}
+{% load static %}
+
+
+{% component "base" text="qwe" %}
+
+    {% fill "header" %}
+        {% component "header" / %}
+    {% endfill %}
+
+    {% fill "body" %}
+
+        hello
+
+    {% endfill %}
+
+    {% fill "footer" %}
+        {% component "footer" / %}
+    {% endfill %}
+
+{% endcomponent %}
