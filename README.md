@@ -15,25 +15,25 @@
 
 #### db
 
-    python manage.py migrate
+    python3 manage.py migrate
 
 #### python
 
-    python -m pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt
 
 #### tailwind
 
-    python manage.py tailwind install
+    python3 manage.py tailwind install
 
 ### Run
 
 Run in first terminal
     
-    python manage.py tailwind start
+    python3 manage.py tailwind start
 
 Run in second terminal
 
-    python manage.py runserver 127.0.0.1:8000
+    python3 manage.py runserver 127.0.0.1:8000
 
 You can access web on 127.0.0.1:8000
 
