@@ -1,0 +1,11 @@
+{% load component_tags %}
+{% load static %}
+
+
+{% component "base" text="qwe" %}
+
+    {% fill "sign_up" %}
+        {% component "sign_up" / %}
+    {% endfill %}
+
+{% endcomponent %}
