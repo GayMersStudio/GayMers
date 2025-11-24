@@ -23,6 +23,8 @@
 
         {{ class }}
     "
+    style="cursor: pointer;"
+    onclick="console.log('pidor')"
 >
     <div class="flex flex-col gap-5">
         <div class="flex gap-5">
@@ -49,7 +51,7 @@
                         <div class="stat-desc">25k month users</div>
                     </div>
 
-                    <div class="stat text-right flex-1">
+                    <div class="stat text-right flex-1 pr-0">
                         <div class="stat-title">Raiting</div>
                         <div class="stat-value">Very positive</div>
                         <div class="stat-desc">89% people think so</div>
@@ -60,30 +62,33 @@
 
         <div class="w-full flex items-end">
 
-            <div class="stats">
-                <div class="stat pl-0">
-                    <div class="stat-title">Platforms</div>
-                    <div class="stat-value">
-                        <div class="flex gap-2 items-center">
-                            <div class="flex gap-1 items-center">
-                                Windows
-                                {% component "icon_auto" icon="windows" fill="currentColor" class="text-base-content" / %}
-                            </div>
-                            <div class="flex gap-1 items-center">
-                                MacOS
-                                {% component "icon_auto" icon="mac" fill="currentColor" class="text-base-content" / %}
-                            </div>
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-col">
+                    <p class="stat-title">Platforms</p>
+                    <div class="flex gap-5">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-2xl">Windows</p>
+                            {% component "icon_auto" icon="windows" fill="currentColor" class="text-base-content" / %}
+                        </div>
+                        <div class="flex gap-1 items-center">
+                            <p class="text-2xl">Macos</p>
+                            {% component "icon_auto" icon="mac" fill="currentColor" class="text-base-content" / %}
                         </div>
                     </div>
                 </div>
 
-                <div class="stat">
-                    <div class="stat-title">Languages</div>
-                    <div class="stat-value">ru, en, ch</div>
+                <div class="flex flex-col">
+                    <p class="stat-title">Languages</p>
+                    <div class="flex gap-5">
+                        <p class="text-2xl">English</p>
+                        <p class="text-2xl">Russian</p>
+                        <p class="text-2xl">Ukranian</p>
+                    </div>
                 </div>
+
             </div>
 
-            <p class="text-xl w-full text-right">for <span class="text-3xl font-bold">$0.00</span></p>
+            <p class="text-xl w-full text-right">for <span class="text-3xl font-bold">FREE</span></p>
 
         </div>
     </div>
