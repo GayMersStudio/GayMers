@@ -4,19 +4,204 @@
 
 {% component "base" text="qwe" %}
 
-    {% fill "header" %}
-        {% component "header" / %}
-    {% endfill %}
 
     {% fill "body" %}
 
+    <div class="flex justify-center mb-10 mt-10">
+        {% component "pcard" only %}
+            {% fill "content" %}
+            <!-- HERO SECTION -->
+            <section class="flex-1 flex flex-col items-center justify-center text-center p-10 w-[70vw]">
+                <h1 class="text-5xl font-extrabold mb-8">Welcome to GayMers</h1>
+                
+                <p class="text-2xl max-w-xl opacity-80 mb-8">
+                    Our goal is to make the search for the next game effortless and enjoyable — whether you're looking for something new to play, comparing different genres, or creating your own top lists.   
+                </p>
+
+                <a href="#" class="btn bg-primary btn-lg px-10 border-none hover:bg-transparent ">
+                Explore Games
+                </a>
+                
+                </section>
+        
+            {% endfill %}
+        {% endcomponent %}
+    </div>
+
+    <div class="flex  justify-center mb-10">
+        {% component "pcard" only %}
+            {% fill "content" %}
+    
+                <!-- FEATURES SECTION -->
+            <section class="py-16  text-center p-10 w-[70vw]">
+                <h2 class="text-5xl font-bold mb-6">What You Can Do Here</h2>
+                
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                    <div class="p-6">
+                        <div class="hover-3d mb-4">
+                            <!-- content -->
+                            <figure class="w-50 h-50 rounded-2xl">
+                              <img src="https://www.svgrepo.com/show/450851/explore.svg"   alt="3D card" />
+                            </figure>
+                            <!-- 8 empty divs needed for the 3D effect -->
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Discover New Games</h3>
+                        <p class="opacity-70 text-lg">Browse a constantly growing database of games with detailed info.</p>
+                    </div>
+
+
+                    <div class="p-6">
+
+                            <div class="hover-3d mb-4">
+                                <!-- content -->
+                                <figure class="w-50 h-50 rounded-2xl">
+                                  <img src="https://www.svgrepo.com/show/89816/stats.svg"  alt="3D card" />
+                                </figure>
+                                <!-- 8 empty divs needed for the 3D effect -->
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                        <h3 class="text-2xl font-semibold mb-2">See Real Statistics</h3>
+                        <p class="text-lg opacity-70">View accurate platform availability, genres, ratings, and more.</p>
+
+                    </div>
+
+
+                    <div class="p-6">
+
+                        <div class="hover-3d mb-4">
+                            <!-- content -->
+                            <figure class="w-50 h-50 rounded-2xl">
+                              <img src="https://www.svgrepo.com/show/148447/choice.svg"  alt="3D card" />
+                            </figure>
+                            <!-- 8 empty divs needed for the 3D effect -->
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mb-2">Find What Fits You</h3>
+                        <p class="text-lg opacity-70">Use smart insights to pick the perfect game based on your style.</p>
+
+                    </div>
+
+                </div>
+
+                <ul class="steps w-[50vw] mt-30 lg:steps-horizontal ">
+                    <li class="step text-lg step-primary">Sign in</li>
+                    <li class="step text-lg step-primary">Choose category</li>
+                    <li class="step text-lg step-primary">Find a game</li>
+                    <li class="step text-lg">Start playing</li>
+                </ul>
+
+            </section> 
+                     
+            {% endfill %}
+        {% endcomponent %}
+    </div>
+
+
+
+    <div class="flex justify-center mb-10 ">
+        {% component "pcard" class="bg-[url('https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg')] bg-cover bg-center bg-no-repeat" %}
+            {% fill "content" %}
+            <div class="w-[70vw] h-200 flex items-center justify-center">
+
+                <div class="flex justify-center">
+                    <span class="text-rotate text-7xl leading-[2]">
+                        <span class="justify-items-center">
+                          <span>🔍 EXPLORE</span>
+                          <span>📈 TRACK</span>
+                          <span>🎯 COMPARE</span>
+                          <span>🎮 PLAY</span>
+                          <span>💬 SHARE OPINION</span>
+                          <span>♻️ REPEAT</span>
+                        </span>
+                      </span>
+                </div>
+
+            </div>
+            {% endfill %}
+        {% endcomponent %}
+    </div>
+
+
     
 
-    {% component "pcard" %}
-    {% fill "content" %}
-    qwed
-    {% endfill %}
-    {% endcomponent %}
+    <div class="flex justify-center">
+
+        <div class="mr-5 w-[35vw]">
+            {% component "pcard" only%}
+                {% fill "content" %}
+
+                <div class="flex-col w-[35vw] h-100">
+                    <div  tabindex="0" class="collapse  ">
+                        <p class="collapse-title font-semibold">About GayMers Studio</p>
+                        <p class="collapse-content text-md">GayMers Studio is a young and ambitious team of six creative developers based in Kharkiv, Ukraine. United by our passion for games and technology, we set out on a mission to make the world of gaming more accessible, informative, and enjoyable for players of all kinds. Our studio was founded with a simple idea: to help gamers discover new experiences in a fast, intuitive, and meaningful way.</p>
+                    </div>
+                
+                    <div tabindex="0" class="collapse  ">
+                        <div class="collapse-title font-semibold">Our Mission</div>
+                        <div class="collapse-content text-md">
+                            We understand how overwhelming the modern gaming market can be. With thousands of titles released every year, players often struggle to find something truly worth their time. That’s why we created a platform designed to simplify discovery through clear and concise statistics. Instead of browsing endlessly through stores and reviews, users can quickly find new games that match their preferences.
+                        </div>
+                    </div>
+
+                    <div tabindex="0" class="collapse">
+                        <div class="collapse-title font-semibold">Our Mission</div>
+                        <div class="collapse-content text-md">
+                            We understand how overwhelming the modern gaming market can be. With thousands of titles released every year, players often struggle to find something truly worth their time. That’s why we created a platform designed to simplify discovery through clear and concise statistics. Instead of browsing endlessly through stores and reviews, users can quickly find new games that match their preferences.
+                        </div>
+                    </div>
+
+                    <div tabindex="0" class="collapse ">
+                        <div class="collapse-title font-semibold">Our Mission</div>
+                        <div class="collapse-content text-md">
+                            We understand how overwhelming the modern gaming market can be. With thousands of titles released every year, players often struggle to find something truly worth their time. That’s why we created a platform designed to simplify discovery through clear and concise statistics. Instead of browsing endlessly through stores and reviews, users can quickly find new games that match their preferences.
+                        </div>
+                    </div>
+
+                </div>
+
+                {% endfill %}
+            {% endcomponent %}
+        </div>
+
+        <div class="ml-5 w-[35vw]">
+            {% component "pcard" only%}
+                {% fill "content" %}
+
+               
+
+                {% endfill %}
+            {% endcomponent %}
+
+        </div>
+
+    </div>
+    
     
 
     {% endfill %}

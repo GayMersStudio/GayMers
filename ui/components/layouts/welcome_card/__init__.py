@@ -1,1 +1,0 @@
-from .welcome_card import Welcome_card
