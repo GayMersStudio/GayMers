@@ -31,78 +31,60 @@
                 <div class="absolute inset-0 rounded-lg bg-primary/10"></div>
             </div>
             <div class="flex flex-col gap-2 flex-1">
-                <p class="text-2xl font-bold text-base-content">{{ title }}</p>
+                <p class="text-3xl font-bold text-base-content">{{ title }}</p>
                 <p class="text-lg text-base-content">{{ desc }}</p>
 
-                <div class="stats lg:stats-horizontal ">
-                    <div class="stat">
-                      <div class="stat-title">Downloads</div>
-                      <div class="stat-value">2.2M </div>  <!--add {{downloads}} instead of int-->
+                <div class="flex-1"></div>
+
+                <div class="stats w-full">
+                    <div class="stat pl-0 flex-1">
+                        <div class="stat-title">Reviews</div>
+                        <div class="stat-value">62.5K </div>
+                        <div class="stat-desc">1.5k reviews last month</div>
                     </div>
-                  
-                    <div class="stat">
-                      <div class="stat-title">Daily users</div>
-                      <div class="stat-value">4,200</div>  <!--add {{daily_users}} instead of int-->
+
+                    <div class="stat text-center flex-1">
+                        <div class="stat-title">Online now</div>
+                        <div class="stat-value">4,200</div>
+                        <div class="stat-desc">25k month users</div>
                     </div>
-                  
-                    <div class="stat">
-                      <div class="stat-title">Raiting</div> <!--add {{raiting}} instead of int-->
-                      <div class="stat-value">4.5</div>
+
+                    <div class="stat text-right flex-1">
+                        <div class="stat-title">Raiting</div>
+                        <div class="stat-value">Very positive</div>
+                        <div class="stat-desc">89% people think so</div>
                     </div>
                 </div>
-
-                <ul class="list  rounded-box ">
-  
-                    <li class="p-4 pb-2 text-lg opacity-60 tracking-wide">Game availability on this platform</li>
-
-                    <li class="list-row  items-center">
-                        <div><img class="size-10 rounded-box" src="https://www.svgrepo.com/show/501427/windows.svg"/></div>
-                        <div class="text-xs  uppercase font-semibold opacity-60">Windows</div>
-                        <span class="text-green-200 text-lg">✅</span> <!--add {{staem_availability}} instead of char-->
-                    </li>
-
-                    <li class="list-row  items-center">
-                        <div><img class="size-10 rounded-box" src="https://www.svgrepo.com/show/511330/apple-173.svg"/></div>
-                        <div class="text-xs  uppercase font-semibold opacity-60">Mac</div>
-                        <span class="text-green-200 text-lg">✅</span> <!--add {{mac_availability}} instead of char-->
-                    </li>
-
-                    <li class="list-row  items-center">
-                        <div><img class="size-10 rounded-box" src="https://www.svgrepo.com/show/394571/xbox.svg"/></div>
-                        <div class="text-xs  uppercase font-semibold opacity-60">Xbox</div> 
-                        <span class="text-green-200 text-lg">❌</span>  <!--add {{xbox_availability}} instead of char-->
-                    </li>
-                    
-                    
-                    <li class="list-row  items-center">
-                      <div><img class="size-10 rounded-box" src="https://www.svgrepo.com/show/327385/logo-playstation.svg"/></div>
-                      <div class="text-xs  uppercase font-semibold opacity-60">Play Stantion</div>
-                      <span class="text-green-200 text-lg">❌</span> <!--add {{ps_availability}} instead of char-->
-                    </li>
-                    
-                  </ul>
-
-                  <div class="stats lg:stats-horizontal ">
-                    
-                    <div class="stat">
-                      <div class="stat-title"> Pricing on steam </div>
-                      <div class="stat-value"> Free to play </div>  <!--add {{pricing_steam}} instead of char-->
-                    </div>
-                  
-                    <div class="stat">
-                      <div class="stat-title">Pricing on console</div>
-                      <div class="stat-value">N/A</div>  <!--add {{pricing_console}} instead of char-->
-                    </div>
-                
-                </div>
-
-                  
-                
             </div>
         </div>
 
-        <div class="w-full">
-            <p class="text-md text-base-content/60">{{ desc }} {{ desc }} {{ desc }} </p>
+        <div class="w-full flex items-end">
+
+            <div class="stats">
+                <div class="stat pl-0">
+                    <div class="stat-title">Platforms</div>
+                    <div class="stat-value">
+                        <div class="flex gap-2 items-center">
+                            <div class="flex gap-1 items-center">
+                                Windows
+                                {% component "icon_auto" icon="windows" fill="currentColor" class="text-base-content" / %}
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                MacOS
+                                {% component "icon_auto" icon="mac" fill="currentColor" class="text-base-content" / %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-title">Languages</div>
+                    <div class="stat-value">ru, en, ch</div>
+                </div>
+            </div>
+
+            <p class="text-xl w-full text-right">for <span class="text-3xl font-bold">$0.00</span></p>
+
         </div>
     </div>
 </div>
