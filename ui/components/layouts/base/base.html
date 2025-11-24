@@ -1,7 +1,7 @@
 {% load static tailwind_tags %}
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="steam">
 <head>
     <title>Django Tailwind</title>
     <meta charset="UTF-8">
@@ -86,8 +86,14 @@
         w-full h-full
         flex flex-col
 
-        overflow-auto
-        hide-scrollbar
+        {% if blocks == 'blocks' %}
+            overflow-y-scroll
+            snap-y
+            snap-mandatory
+        {% else %}
+            overflow-auto
+            hide-scrollbar
+        {% endif %}
     ">
         <div class="sticky top-0 z-10">
             <div class="flex flex-col gap-5 w-full">
