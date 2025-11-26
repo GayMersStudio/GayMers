@@ -13,5 +13,6 @@ class Card(component.Component):
 
         return {
             "type": card_type,
-            "class": kwargs.get("class", "")
+            "class": kwargs.get("class", ""),
+            "onclick": kwargs.get("onclick", ""),
         }

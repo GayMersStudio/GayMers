@@ -1,4 +1,5 @@
 {% load static tailwind_tags %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
@@ -7,7 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="{% static 'js/hls.js' %}"></script>
+    <script src="{% static 'js/htmx.js' %}"></script>
 
     {% tailwind_css %}
 </head>

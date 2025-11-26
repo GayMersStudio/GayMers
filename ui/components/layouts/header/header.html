@@ -4,7 +4,7 @@
     {% component "pcard" type="rounded" class="h-full" %}
         {% fill "content" %}
             <div class="flex w-full gap-10">
-                {% component "card" type="inv" class="h-full" %}
+                {% component "card" type="inv" class="h-full" onclick="openWelcome()" %}
                     {% fill "content" %}
                         <div class="flex items-center gap-2 h-full">
                             <img class="w-12 h-12" src="{% static 'logo/steam_white.png' %}" >

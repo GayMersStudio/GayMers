@@ -1,5 +1,6 @@
 <div
     class="
+        group
         flex
         justify-start
         items-center
@@ -24,15 +25,33 @@
         {{ class }}
     "
     style="cursor: pointer;"
-    onclick="console.log('pidor')"
+
+    {% if trailer %}
+        onmouseenter="startVideo(this, '{{ trailer }}')"
+    {% endif %}
 >
-    <div class="flex flex-col gap-5">
-        <div class="flex gap-5">
-            <div class="relative h-auto object-cover flex-1">
-                <img src="{{ pic }}" class="w-full h-full rounded-lg object-cover" />
-                <div class="absolute inset-0 rounded-lg bg-primary/10"></div>
+    <div class="flex flex-col gap-5 w-full">
+        <div class="flex gap-5 w-full">
+            <div
+                class="hover-3d flex-1"
+                onmouseenter="playVideo(this)"
+                onmouseleave="pauseVideo(this)"
+            >
+                <figure class="rounded-2xl p-3">
+                    <img src="{{ pic }}" class="w-full h-full rounded-lg object-cover" alt="none"/>
+
+                    <video
+                        class="media-layer fade-video show"
+                        loop
+                        muted
+                        playsinline
+                        preload="auto"
+                    ></video>
+                </figure>
+
+                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
             </div>
-            <div class="flex flex-col gap-2 flex-1">
+            <div class="flex flex-col gap-2 flex-1 z-0">
                 <p class="text-3xl font-bold text-base-content">{{ title }}</p>
                 <p class="text-lg text-base-content">{{ desc }}</p>
 
@@ -88,7 +107,7 @@
 
             </div>
 
-            <p class="text-xl w-full text-right">for <span class="text-3xl font-bold">FREE</span></p>
+            <p class="text-xl w-full text-right">for <span class="text-3xl font-bold">{{ price }}</span></p>
 
         </div>
     </div>
