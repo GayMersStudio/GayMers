@@ -1,5 +1,6 @@
 <div
     class="
+        game
         group
         flex
         justify-start
@@ -25,12 +26,15 @@
         {{ class }}
     "
     style="cursor: pointer;"
-
-    {% if trailer %}
-        onmouseenter="startVideo(this, '{{ trailer }}')"
-    {% endif %}
 >
-    <div class="flex flex-col gap-5 w-full">
+    <div
+        class="flex flex-col gap-5 w-full"
+
+        {% if trailer %}
+            onmouseenter="startVideo(this, '{{ trailer }}')"
+        {% endif %}
+
+    >
         <div class="flex gap-5 w-full">
             <div
                 class="hover-3d flex-1"
@@ -40,13 +44,15 @@
                 <figure class="rounded-2xl p-3">
                     <img src="{{ pic }}" class="w-full h-full rounded-lg object-cover" alt="none"/>
 
+                    <span class="loader-layer loading loading-spinner hidden z-20"></span>
+
                     <video
-                        class="media-layer fade-video show"
+                        class="media-layer fade-video"
                         loop
                         muted
                         playsinline
-                        preload="auto"
-                    ></video>
+                    >
+                    </video>
                 </figure>
 
                 <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>

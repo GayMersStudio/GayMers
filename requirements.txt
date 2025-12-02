@@ -13,3 +13,4 @@ uvicorn
 whitenoise
 asgiref
 django_components
+AgentService==0.0.141

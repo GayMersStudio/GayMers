@@ -5,86 +5,32 @@
 
     {% fill "body" %}
 
-        {% component "pcard" type="inv" class="flex-col *:w-[70vw] *:h-[90vh] *:snap-start" %}
+        {% component "pcard" type="inv" class="flex-col w-full h-full" %}
 
             {% fill "content" %}
-                <section class="flex flex-col items-center h-full text-center animate-fade-in">
-                    <div class="h-full"></div>
+                <section class="flex flex-col items-center h-full text-center">
+                    <div class="h-[30vh]"></div>
 
-                    <h1 class="text-6xl font-extrabold mb-8 animate-slide-down">Welcome to GayMers</h1>
+                    <p class="text-8xl font-extrabold mb-8 animate-slide-down">Welcome to GayMers</p>
 
-                    <p class="text-2xl max-w-2xl text-base-content/60 mb-8 animate-slide-up">
-                        Our goal is to make the search for the next game effortless and enjoyable — whether you're looking for something new to play, comparing different genres, or creating your own top lists.
-                    </p>
-
-                    <a href="/" class="btn bg-primary btn-lg px-10 border-none hover:bg-base-100/0 transition-all duration-300 scale-100 hover:scale-105 animate-pop">
-                        Explore Games
-                    </a>
-
-                    <div class="h-full"></div>
-
-                </section>
-
-                <section class="flex flex-col items-center h-full text-center animate-fade-in delay-200">
-                    <div class="h-full"></div>
-
-                    <p class="text-6xl font-bold mb-8 animate-slide-down">What you can do here?</p>
-
-                    <div class="grid grid-cols-3 gap-10">
-
-                        <div class="flex flex-col group animate-scale-in">
-                            <div class="hover-3d mb-4 justify-center group-hover:scale-105 transition-transform duration-300">
-                                <figure class="w-50 h-50 rounded-2xl p-5 shadow-xl shadow-primary/20 group-hover:shadow-primary/40 transition-all">
-                                    {% component "icon_auto" icon="discover" stroke="currentColor" class="text-base-content/60 w-full h-full" / %}
-                                </figure>
-
-                                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                            </div>
-
-                            <p class="text-2xl font-semibold mb-2">Discover New Games</p>
-                            <p class="opacity-70 text-lg">Browse a constantly growing database of games with detailed info.</p>
-                        </div>
-
-                        <div class="flex flex-col group animate-scale-in delay-100">
-                            <div class="hover-3d mb-4 justify-center group-hover:scale-105 transition-transform duration-300">
-                                <figure class="w-50 h-50 rounded-2xl p-5 shadow-xl shadow-primary/20 group-hover:shadow-primary/40 transition-all">
-                                    {% component "icon_auto" icon="stats" stroke="currentColor" class="text-base-content/60 w-full h-full" / %}
-                                </figure>
-
-                                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                            </div>
-
-                            <p class="text-2xl font-semibold mb-2">See Real Statistics</p>
-                            <p class="text-lg opacity-70">View accurate platform availability, genres, ratings, and more.</p>
-                        </div>
-
-                        <div class="flex flex-col group animate-scale-in delay-200">
-                            <div class="hover-3d mb-4 justify-center group-hover:scale-105 transition-transform duration-300">
-                                <figure class="w-50 h-50 rounded-2xl p-5 shadow-xl shadow-primary/20 group-hover:shadow-primary/40 transition-all">
-                                    {% component "icon_auto" icon="geom" stroke="currentColor" class="text-base-content/60 w-full h-full" / %}
-                                </figure>
-
-                                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                            </div>
-
-                            <p class="text-2xl font-semibold mb-2">Find What Fits You</p>
-                            <p class="text-lg opacity-70">Use smart insights to pick the perfect game based on your style.</p>
-                        </div>
-
+                    <div class="flex marker mb-14">
+                        <p class="text-4xl max-w-3xl text-base-content/60 mb-8 animate-slide-up">
+                            We LOVE games and wish we could help you find yours one
+                        </p>
+                        <svg class="curve-arrow text-base-content/60" viewbox="-.1 -.05 8 6">
+                            <path d="M4 0C10 1 8 4 0 3.6M0 3.6 0.5 3.3M0 3.6 .5 3.9" fill="none" stroke="currentColor" stroke-width="0.1" stroke-linecap="round"/>
+                        </svg>
                     </div>
 
-                    <div class="h-full"></div>
-                </section>
+                    <a href="/"
+                       class="relative inline-block px-8 py-4 font-semibold text-white rounded-lg
+                              border-2 border-white/30
+                              shadow-[0_0_10px_rgba(255,255,255,0.2)]
+                              hover:border-white/70 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]
+                              transition-all duration-300">
+                        Explore games
+                    </a>
 
-                <section class="flex flex-col items-center justify-center h-full text-center animate-fade-in delay-300">
-                    <div class="h-full"></div>
-
-                    <p class="text-6xl font-extrabold mb-8 animate-slide-down">About us</p>
-                    <p class="text-2xl max-w-2xl text-base-content/60 mb-8 animate-slide-up">
-                        We are a small team from Ukraine...
-                    </p>
-
-                    <div class="h-full"></div>
                 </section>
 
             {% endfill %}
@@ -122,4 +68,29 @@
     .animate-slide-up { animation: slide-up 0.8s ease forwards; }
     .animate-pop { animation: pop 0.6s ease forwards; }
     .animate-scale-in { animation: scale-in 0.7s ease forwards; }
+
+    .marker {
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .marker .curve-arrow {
+      display: block;
+      width: 290px;
+      position: absolute;
+      right: 0;
+      top: calc(60%);
+    }
+
+    @keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradientShift 5s linear infinite;
+}
+
 </style>

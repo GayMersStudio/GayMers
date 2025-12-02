@@ -29,7 +29,7 @@ SECRET_KEY = config.django.secret_key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "192.168.1.101", "bots.innova.ua", "baobab.ink"]
+ALLOWED_HOSTS = ["127.0.0.1", "192.168.1.101", "bots.innova.ua", "baobab.ink", "192.168.1.100"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://bots.innova.ua",

@@ -14,7 +14,7 @@
                 {% endcomponent %}
 
                 <div class="flex gap-5 items-center">
-                    {% component "tab" class="h-full" %}
+                    {% component "tab" class="h-full" target="fresh" %}
                         {% fill "content" %}
                             <div class="flex items-center gap-2">
                                 <p class="text-lg text-currentColor">Fresh</p>
@@ -22,7 +22,7 @@
                         {% endfill %}
                     {% endcomponent %}
 
-                    {% component "tab" class="h-full" %}
+                    {% component "tab" class="h-full" target="trending" %}
                         {% fill "content" %}
                             <div class="flex items-center gap-2">
                                 <p class="text-lg text-currentColor">Trending</p>
@@ -30,7 +30,7 @@
                         {% endfill %}
                     {% endcomponent %}
 
-                    {% component "tab" class="h-full" %}
+                    {% component "tab" class="h-full" target="classic" %}
                         {% fill "content" %}
                             <div class="flex items-center gap-2">
                                 <p class="text-lg text-currentColor">Classic</p>

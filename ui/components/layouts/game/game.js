@@ -13,11 +13,20 @@ function startVideo(el, src){
 
     loaded.push(src)
 
+    loader = el.querySelector(".loading")
+    loader.classList.remove("hidden")
+
     video = el.querySelector("video")
 
-    const hls = new Hls()
+    const hls = new Hls({
+        maxBufferLength: 1,
+        maxMaxBufferLength: 1
+    })
     hls.loadSource(src)
     hls.attachMedia(video)
+    video.addEventListener("loadeddata", () => {
+        loader.classList.add("hidden")
+    });
 }
 
 

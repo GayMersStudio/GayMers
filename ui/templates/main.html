@@ -12,7 +12,13 @@
 
         {% block content %}
 
-            {% include "tabs/"|add:tab|add:".html" %}
+            <div class="flex flex-col w-full h-full gap-20 items-center">
+                <div class="w-full min-h-1"></div>
+
+                <div id="games_cont" class="flex flex-col w-full items-center gap-20"></div>
+
+                <div class="w-full min-h-1"></div>
+            </div>
 
         {% endblock %}
     
@@ -20,14 +26,77 @@
 
 {% endcomponent %}
 
-<script>
+<div id="game_template" class="hidden">
+    {% component "game" title="game_title" pic="game_pic" desc="game_desc" price="game_price" trailer=" game_trailer " / %}
+</div>
 
-    function activteCurrentTab(name){
+<div id="game_skeleton_template" class="hidden">
+    {% component "game_skeleton" / %}
+</div>
+
+<script>
+    let host = "{{ request.get_host }}"
+    let scheme = "https"
+
+    if (host == "127.0.0.1:8000"){
+        scheme = "http"
+    }
+
+    let BASE_API_URL = `${scheme}://${host}/api/v1/`
+</script>
+
+<script>
+    async function activteCurrentTab(name){
         if (name === "Fresh"){
-            activateTab(document.querySelectorAll(".tab")[0])
+            await activateTab(document.querySelectorAll(".tab")[0], name)
         }
     }
 
-    activteCurrentTab("{{ tab }}")
+    async function loadGames(name){
+        loaded.length = 0;
+        
+        document.querySelectorAll("#games_cont .game").forEach(el => {
+            el.remove()
+        })
+
+        times = [1, 2, 3]
+        times.forEach(i => {
+            clone = document.querySelector("#game_skeleton_template .game").cloneNode(true);
+            games_cont.appendChild(clone)
+        })
+
+        try {
+            const response = await fetch(BASE_API_URL + `lists?key=${name}`, {
+                method: "GET",
+                credentials: "include"
+            })
+
+            const data = await response.json()
+
+            document.querySelectorAll("#games_cont .game").forEach(el => {
+                el.remove()
+            })
+
+            data["games"].forEach(game => {
+                clone = document.querySelector("#game_template .game").cloneNode(true);
+                clone.innerHTML = clone.innerHTML
+                    .replace(/game_title/g, game.title)
+                    .replace(/game_pic/g, game.pic)
+                    .replace(/game_desc/g, game.desc)
+                    .replace(/game_price/g, game.price)
+                    .replace(/game_trailer/g, game.trailer)
+                games_cont.appendChild(clone)
+            })
+
+        } catch (error) {
+            
+        } finally {
+
+        }
+    };
+
+    (async () => {
+        await activteCurrentTab("{{ top }}")
+    })();
 
 </script>

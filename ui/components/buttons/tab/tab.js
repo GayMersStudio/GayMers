@@ -17,8 +17,9 @@ function tabSwitch(tab, isOn){
     }
 }
 
-function activateTab(el, callback){
+async function activateTab(el, target){
     document.querySelectorAll(".tab").forEach(tab => {tabSwitch(tab, false)})
 
     tabSwitch(el, true)
+    await loadGames(target)
 }
